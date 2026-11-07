@@ -25,16 +25,16 @@ This project demonstrates strong backend fundamentals, authentication, authoriza
 ![Home Page](WanderLust/screenshots/home.png)
 
 ### Listing Details
-![Listing Page](screenshots/listing.png)
+![Listing Page](WanderLust/screenshots/listing.png)
 
 ### Add New Listing
-![Add Listing](screenshots/add-listing.png)
+![Add Listing](WanderLust/screenshots/add-listing.png)
 
 ### Reviews Section
-![Reviews](screenshots/review.png)
+![Reviews](WanderLust/screenshots/review.png)
 
 ### Login Page
-![Login](screenshots/login.png)
+![Login](WanderLust/screenshots/login.png)
 
 ---
 
