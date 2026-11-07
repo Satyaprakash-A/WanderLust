@@ -1,13 +1,14 @@
-
+require("dotenv").config({ path: "../.env" });
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+// Use your Atlas database URL from .env, falling back to local only if missing
+const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/wanderlust";
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
-    console.log("connected to DB");
+    await mongoose.connect(dbUrl);
+    console.log("Connected to MongoDB Atlas");
 
     const initDB = async () => {
         await Listing.deleteMany({});
@@ -22,7 +23,7 @@ async function main() {
         }));
 
         await Listing.insertMany(initData.data);
-        console.log("data was initialized");
+        console.log("Data was successfully initialized in MongoDB Atlas!");
     };
 
     await initDB();
@@ -30,7 +31,7 @@ async function main() {
 
 main()
     .catch((err) => {
-        console.log(err);
+        console.log("Initialization Error:", err);
     })
     .finally(async () => {
         await mongoose.connection.close();
