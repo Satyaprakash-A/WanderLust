@@ -22,7 +22,7 @@ This project demonstrates strong backend fundamentals, authentication, authoriza
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](WanderLust/screenshots/home.png)
 
 ### Listing Details
 ![Listing Page](screenshots/listing.png)
