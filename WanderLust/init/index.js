@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-// Use your Atlas database URL from .env, falling back to local only if missing
+// Connect to Atlas DB from .env (fallback to local if missing)
 const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/wanderlust";
 
 async function main() {
     await mongoose.connect(dbUrl);
-    console.log("Connected to MongoDB Atlas");
+    console.log("Connected to Atlas DB");
 
     const initDB = async () => {
         await Listing.deleteMany({});
 
         initData.data = initData.data.map((obj) => ({
             ...obj,
-            owner: "69512270af6871d8ede6a6c4",
+            owner: "69512270af6871d8ede6a6c4", // Valid ObjectId string for owner
             geometry: {
                 type: "Point",
                 coordinates: [0, 0],
